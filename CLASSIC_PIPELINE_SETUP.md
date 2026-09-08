@@ -77,7 +77,7 @@ Aapke screenshot ke acche se **"This setting cannot be changed as it is enforced
 - **Script**:
   ```powershell
   cd $(System.DefaultWorkingDirectory)/Parent-Moudle
-  terraform apply -auto-approve tfplan
+  terraform apply "tfplan"
   ```
 
 ---
