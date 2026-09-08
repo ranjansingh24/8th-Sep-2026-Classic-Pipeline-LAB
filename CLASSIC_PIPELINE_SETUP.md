@@ -47,40 +47,36 @@ Aapke screenshot ke acche se **"This setting cannot be changed as it is enforced
 #### **Task 1: Terraform Format (`fmt`)**
 - **Type**: PowerShell / Command Line Task
 - **Display Name**: `Terraform Fmt`
-- **Working Directory**: `$(System.DefaultWorkingDirectory)/Parent-Moudle`
 - **Script**:
   ```powershell
-  cd Parent-Moudle
+  cd $(System.DefaultWorkingDirectory)/Parent-Moudle
   terraform fmt
   ```
 
 #### **Task 2: Terraform Initialization (`init`)**
 - **Type**: PowerShell / Command Line Task
 - **Display Name**: `Terraform Init`
-- **Working Directory**: `$(System.DefaultWorkingDirectory)/Parent-Moudle`
 - **Script**:
   ```powershell
-  cd Parent-Moudle
+  cd $(System.DefaultWorkingDirectory)/Parent-Moudle
   terraform init
   ```
 
 #### **Task 3: Terraform Plan (`plan`)**
 - **Type**: PowerShell / Command Line Task
 - **Display Name**: `Terraform Plan`
-- **Working Directory**: `$(System.DefaultWorkingDirectory)/Parent-Moudle`
 - **Script**:
   ```powershell
-  cd Parent-Moudle
-  terraform plan -out=tfplan
+  cd $(System.DefaultWorkingDirectory)/Parent-Moudle
+  terraform plan -var-file="terraform.tfvars" -out=tfplan
   ```
 
 #### **Task 4: Terraform Apply (`apply`)**
 - **Type**: PowerShell / Command Line Task
 - **Display Name**: `Terraform Apply`
-- **Working Directory**: `$(System.DefaultWorkingDirectory)/Parent-Moudle`
 - **Script**:
   ```powershell
-  cd Parent-Moudle
+  cd $(System.DefaultWorkingDirectory)/Parent-Moudle
   terraform apply -auto-approve tfplan
   ```
 
